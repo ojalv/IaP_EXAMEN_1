@@ -1,29 +1,30 @@
-/*
-Caso de estudio: Proceso de Recepción y Actualización del Stock de Maíz
-Introducción
-La Cooperativa La Perdedora está a punto de iniciar la cosecha de maíz. El recibidor de granos tiene la responsabilidad de recibir un ingreso inicial de 3000 toneladas de maíz y actualizar el stock en el silo correspondiente. Para garantizar un proceso eficiente y seguro, es necesario seguir una serie de pasos específicos.
+//Entrada
+//  stock de silos (maiz) 1, 2 y 3
+//  cantidad de maiz recibida (3k toneladas)
 
-Objetivos
-Verificar el stock actual de maíz en el silo designado.
-Recibir 3000 toneladas de maíz del camión transportador.
-Actualizar el stock de maíz en el sistema de gestión de inventarios.
-Informar al personal de la cooperativa sobre el stock actualizado de maíz.
-Procedimiento
-1. Verificación del stock actual:
+//Proceso
+//  verificar si los silos se encuentran en optimas condiciones
+//  controlar calidad de los granos y descargar en el silo correspondiente
+//  verificar si hay irregularidades en la recepcion del grano
+//  verificar si hay irregularidades en el almacenamiento
+//  sumar stock descargado en silo correspondiente
 
-Consultar el stock actual del silo correspondiente a cereal maíz.
-2. Recepción del maíz:
+//Salida
+//  ver Stock del silo
+//  Informar Stock a los empleados de la cooperativa
+//  Informar al supervisor si hubo un problema en la recepcion o el almacenamiento
 
-Asegurarse de que el maíz descargado cumpla con los estándares de calidad establecidos por la cooperativa:
-Verificar el estado del maíz y dirigirlo al silo correspondiente:
-Si tiene cuerpos extraños, debe ir a un silo dos (2) reservado para este fin.
-Si tiene humedad, debe ir a silo tres (3) reservado para tal fin.
-3. Actualización del stock:
+/* Importante!
+antes de la recepcion verificar que el silo se encuentre en condiciones optimas
+verificar limpieza
+verificar ventilacion
 
-Sumar la cantidad de maíz descargado al stock actual.
-Informar el estado actual del silo a los usuarios.
-Comunicar el nuevo stock de maíz al personal de la cooperativa, incluyendo gerentes, supervisores y operadores del silo.
-Consideraciones adicionales
-Antes de la recepción del maíz, verificar que el silo se encuentre en condiciones óptimas de almacenamiento, incluyendo limpieza y ventilación.
-En caso de detectar alguna irregularidad durante la recepción o el almacenamiento del maíz, informar de inmediato al personal superior.
+si hay irregularidades:
+recepcion --> informar de inmediato al superior
+almacenamiento --> informar de imediato al superior
+
+verificar calidad de los granos
+silo 1: esta ok
+silo 2: cuerpos extranios
+silo 3: humedad
 */
