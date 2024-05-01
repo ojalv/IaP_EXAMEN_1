@@ -114,6 +114,34 @@ function informarIrregularidad(recepcionOk, almacenamientoOk) {
   }
 }
 
+function main(stockSilo2, stockSilo2, stockSilo3, granosRecibidos) {
+  let siloOk = siloOptimo();
+  if (siloOk) {
+    alert("El silo esta Ok");
+  } else {
+    alert("El supervisor sera informado inmediatamente de esta irregulariadad");
+  }
+
+  let recepcionOk = recepcionOptima();
+  let almacenamientoOk = alamacenamientoOptimo();
+
+  switch (calidadGranos()) {
+    case 1:
+      stockSilo1 += granosRecibidos;
+      break;
+    case 2:
+      stockSilo2 += granosRecibidos;
+      break;
+    case 3:
+      stockSilo3 += granosRecibidos;
+      break;
+  }
+  // Salidas
+  mostrarStock(stockSilo1, stockSilo2, stockSilo3);
+  informarStock();
+  informarIrregularidad(recepcionOk, almacenamientoOk);
+}
+
 // Entradas
 let stockSilo1 = 0; //granos de maiz en estado optimo
 let stockSilo2 = 0; //granos de maiz con cuerpos extranios
@@ -121,29 +149,4 @@ let stockSilo3 = 0; //granos de maiz con humedad
 let granosRecibidos = 3000; //toneladas de granos de maiz recibidas (no descargadas aun)
 
 // Proceso
-let siloOk = siloOptimo()
-if (siloOk) {
-  alert("El silo esta Ok");
-} else {
-  alert("El supervisor sera informado inmediatamente de esta irregulariadad");
-}
-
-let recepcionOk = recepcionOptima();
-let almacenamientoOk = alamacenamientoOptimo();
-
-switch (calidadGranos()) {
-  case 1:
-    stockSilo1 += granosRecibidos;
-    break;
-  case 2:
-    stockSilo2 += granosRecibidos;
-    break;
-  case 3:
-    stockSilo3 += granosRecibidos;
-    break;
-}
-
-// Salidas
-mostrarStock(stockSilo1, stockSilo2, stockSilo3);
-informarStock();
-informarIrregularidad(recepcionOk, almacenamientoOk);
+main(stockSilo1, stockSilo2, stockSilo3, granosRecibidos);
