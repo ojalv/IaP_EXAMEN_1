@@ -106,7 +106,7 @@ let stockSilo3 = 0; //granos de maiz con humedad
 let granosRecibidos = 3000; //toneladas de granos de maiz recibidas (no descargadas aun)
 
 // Proceso
-if (siloOptimo) {
+if (siloOptimo()) {
   alert("El silo esta Ok");
 }
 
