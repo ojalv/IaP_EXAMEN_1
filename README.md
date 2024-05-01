@@ -5,7 +5,7 @@
 
 **Cátedra:** Introducción a la programación
 
-**Integrantes del grupo:** ____________________________
+**Integrantes del grupo:** Ojeda Alvaro, Martínez Emilse, Jaimes Nazarena
 
 **Consideraciones del examen:**
 
