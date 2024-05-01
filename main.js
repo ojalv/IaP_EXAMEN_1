@@ -30,8 +30,14 @@ silo 3: humedad
 */
 
 function siloOptimo() {
-  let limpieza = prompt("La limpieza del silo es adecuada?\n1.Si\n2.No");
-  let ventilacion = prompt("La ventilacion del silo es adecuada?\n1.Si\n2.No");
+  let limpieza;
+  let ventilacion;
+  do {
+    limpieza = prompt("La limpieza del silo es adecuada?\n1.Si\n2.No");
+  } while (limpieza != 1 && limpieza != 2);
+  do {
+    ventilacion = prompt("La ventilacion del silo es adecuada?\n1.Si\n2.No");
+  } while (ventilacion != 1 && ventilacion != 2);
 
   if (limpieza == 1 && ventilacion == 1) {
     return true;
@@ -40,9 +46,12 @@ function siloOptimo() {
 }
 
 function recepcionOptima() {
-  let irregularidad = prompt(
-    "Hubo alguna irregularidad en la recepcion del grano?\n1.Si\n2.No"
-  );
+  let irregularidad;
+  do {
+    irregularidad = prompt(
+      "Hubo alguna irregularidad en la recepcion del grano?\n1.Si\n2.No"
+    );
+  } while (irregularidad != 1 && irregularidad != 2);
 
   if (irregularidad == 1) {
     return false;
@@ -52,17 +61,23 @@ function recepcionOptima() {
 }
 
 function calidadGranos() {
-  let calidad = prompt(
-    "Ingrese la calidad del grano recibido para luego almacenarlo\n1.Limpio\n2.Cuerpos extraños\n3.Humedo"
-  );
+  let calidad;
+  do {
+    calidad = prompt(
+      "Ingrese la calidad del grano recibido para luego almacenarlo\n1.Limpio\n2.Cuerpos extraños\n3.Humedo"
+    );
+  } while (calidad != 1 && calidad != 2 && calidad != 3);
   alert(`El maiz se almacenara en el silo ${calidad}`);
   return parseInt(calidad);
 }
 
 function alamacenamientoOptimo() {
-  let irregularidad = prompt(
-    "Hubo alguna irregularidad en el almacenamiento del grano?\n1.Si\n2.No"
-  );
+  let irregularidad;
+  do {
+    irregularidad = prompt(
+      "Hubo alguna irregularidad en el almacenamiento del grano?\n1.Si\n2.No"
+    );
+  } while (irregularidad != 1 && irregularidad != 2);
   if (irregularidad == 1) {
     return false;
   }
@@ -110,11 +125,10 @@ if (siloOptimo()) {
   alert("El silo esta Ok");
 }
 
-let calidad = calidadGranos();
 let recepcionOk = recepcionOptima();
 let almacenamientoOk = alamacenamientoOptimo();
 
-switch (calidad) {
+switch (calidadGranos()) {
   case 1:
     stockSilo1 += granosRecibidos;
     break;
