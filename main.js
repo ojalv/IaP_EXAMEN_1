@@ -116,14 +116,14 @@ function informarIrregularidad(recepcionOk, almacenamientoOk) {
 
 function main(stockSilo2, stockSilo2, stockSilo3, granosRecibidos) {
   let siloOk = siloOptimo();
+  let recepcionOk = recepcionOptima();
+  let almacenamientoOk = alamacenamientoOptimo();
   if (siloOk) {
     alert("El silo esta Ok");
   } else {
     alert("El supervisor sera informado inmediatamente de esta irregulariadad");
   }
 
-  let recepcionOk = recepcionOptima();
-  let almacenamientoOk = alamacenamientoOptimo();
 
   switch (calidadGranos()) {
     case 1:
